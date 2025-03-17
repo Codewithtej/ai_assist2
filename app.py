@@ -1,6 +1,6 @@
 import openai
-from dotenv import load_dotenv
-import os
+# from dotenv import load_dotenv
+# import os
 
 
 import streamlit as st
@@ -9,34 +9,34 @@ import pytz
 from datetime import datetime
 
 from openai import OpenAI
-load_dotenv()  # Load environment variables from .env file
+# load_dotenv()  # Load environment variables from .env file
 
 api_key = st.secrets["openai_api_key"]
-import boto3
-from botocore.exceptions import ClientError
-from cryptography.fernet import Fernet
+# import boto3
+# from botocore.exceptions import ClientError
+# from cryptography.fernet import Fernet
 
 
-def get_secret():
+# def get_secret():
 
-    secret_name = "my_api_oa"
-    region_name = "us-east-1"
+#     secret_name = "my_api_oa"
+#     region_name = "us-east-1"
 
-    # Create a Secrets Manager client
-    session = boto3.session.Session()
-    client = session.client(
-        service_name='secretsmanager',
-        region_name=region_name
-    )
+#     # Create a Secrets Manager client
+#     session = boto3.session.Session()
+#     client = session.client(
+#         service_name='secretsmanager',
+#         region_name=region_name
+#     )
 
-    try:
-        get_secret_value_response = client.get_secret_value(
-            SecretId=secret_name
-        )
-    except:
-        pass
-    secret = get_secret_value_response['SecretString']
-    return secret
+#     try:
+#         get_secret_value_response = client.get_secret_value(
+#             SecretId=secret_name
+#         )
+#     except:
+#         pass
+#     secret = get_secret_value_response['SecretString']
+#     return secret
 
 
 
@@ -44,10 +44,10 @@ def get_secret():
 # # Access the API key
 # api_key = os.getenv("openai_api_key")
 # openai.organization = os.getenv("openai_org")
-def d(a, b):
-    cipher_suite = Fernet(b)
-    return cipher_suite.decrypt(a).decode()
-# #print(openai.VERSION)
+# def d(a, b):
+#     cipher_suite = Fernet(b)
+#     return cipher_suite.decrypt(a).decode()
+#print(openai.VERSION)
 # openai_api_key = os.environ["OPENAI_API_KEY"]
 
 # Inject custom CSS to hide the Streamlit footer
@@ -58,8 +58,8 @@ hide_streamlit_style = """
     </style>
     """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-ke= b'blTa0F8umhZWRtBGtGErZdwPyhmozv1sdalAcBzDUl4='
-de= b'gAAAAABmJsIboYYZB5upyeypfoT_hzFPsFYSoP8e2hTpAvH1j4CdI_Q89LKtfodfxVZPe_B8biLgvBioE7_j23IRt_xwyvJnEuJ0OmNoCcvhQnErrHCWCmYzg82qb3TdIuPYksGSVLRPpjwAd5VNOeTvmQK-9cBREQ=='
+# ke= b'blTa0F8umhZWRtBGtGErZdwPyhmozv1sdalAcBzDUl4='
+# de= b'gAAAAABmJsIboYYZB5upyeypfoT_hzFPsFYSoP8e2hTpAvH1j4CdI_Q89LKtfodfxVZPe_B8biLgvBioE7_j23IRt_xwyvJnEuJ0OmNoCcvhQnErrHCWCmYzg82qb3TdIuPYksGSVLRPpjwAd5VNOeTvmQK-9cBREQ=='
 
 
 # Define the current time with the timezone
@@ -67,8 +67,8 @@ now_a = datetime.now(pytz.utc)
 
 # Convert the time to Pacific Time Zone (California Time)
 pacific = pytz.timezone('America/Los_Angeles')
-ak=d(de,ke)
-api_key=ak
+# ak=d(de,ke)
+# api_key=ak
 now = now_a.astimezone(pacific)
 # Function to read the content of the salon.txt file
 
