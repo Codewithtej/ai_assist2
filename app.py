@@ -10,8 +10,7 @@ from datetime import datetime
 
 from openai import OpenAI
 load_dotenv()  # Load environment variables from .env file
-
-
+api_key =st.secrets("openai_api_key")
 import boto3
 from botocore.exceptions import ClientError
 from cryptography.fernet import Fernet
