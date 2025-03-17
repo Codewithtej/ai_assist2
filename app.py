@@ -12,6 +12,8 @@ from openai import OpenAI
 # load_dotenv()  # Load environment variables from .env file
 
 api_key = st.secrets["openai_api_key"]
+client=OpenAI(api_key =api_key)
+model_use = "gpt-3.5-turbo"
 # import boto3
 # from botocore.exceptions import ClientError
 # from cryptography.fernet import Fernet
@@ -74,8 +76,7 @@ now = now_a.astimezone(pacific)
 
 
 
-client=OpenAI(api_key =api_key)
-model_use = "gpt-3.5-turbo"
+
 
 st.write('<div style="font-size:24px;">'
             '<span style="display: block;">Hi, this is Leo, I am Tej Davuluri\'s AI assistant! 🤖.</span>'
