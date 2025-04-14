@@ -9,7 +9,7 @@ import pytz
 from datetime import datetime
 
 from openai import OpenAI
-load_dotenv()  # Load environment variables from .env file
+#load_dotenv()  # Load environment variables from .env file
 
 
 # import boto3
