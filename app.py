@@ -58,18 +58,18 @@ hide_streamlit_style = """
     </style>
     """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-ke= b'blTa0F8umhZWRtBGtGErZdwPyhmozv1sdalAcBzDUl4='
-de= b'gAAAAABmJsIboYYZB5upyeypfoT_hzFPsFYSoP8e2hTpAvH1j4CdI_Q89LKtfodfxVZPe_B8biLgvBioE7_j23IRt_xwyvJnEuJ0OmNoCcvhQnErrHCWCmYzg82qb3TdIuPYksGSVLRPpjwAd5VNOeTvmQK-9cBREQ=='
+# ke= b'blTa0F8umhZWRtBGtGErZdwPyhmozv1sdalAcBzDUl4='
+# de= b'gAAAAABmJsIboYYZB5upyeypfoT_hzFPsFYSoP8e2hTpAvH1j4CdI_Q89LKtfodfxVZPe_B8biLgvBioE7_j23IRt_xwyvJnEuJ0OmNoCcvhQnErrHCWCmYzg82qb3TdIuPYksGSVLRPpjwAd5VNOeTvmQK-9cBREQ=='
 
 
 # Define the current time with the timezone
 now_a = datetime.now(pytz.utc)
 
 # Convert the time to Pacific Time Zone (California Time)
-pacific = pytz.timezone('America/Los_Angeles')
-ak=d(de,ke)
-api_key=ak
-now = now_a.astimezone(pacific)
+# pacific = pytz.timezone('America/Los_Angeles')
+# ak=d(de,ke)
+# api_key=ak
+# now = now_a.astimezone(pacific)
 # Function to read the content of the salon.txt file
 
 print(openai_api_key)
