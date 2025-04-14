@@ -1,6 +1,6 @@
 import openai
-# from dotenv import load_dotenv
-# import os
+from dotenv import load_dotenv
+import os
 
 
 import streamlit as st
@@ -9,11 +9,9 @@ import pytz
 from datetime import datetime
 
 from openai import OpenAI
-# load_dotenv()  # Load environment variables from .env file
+load_dotenv()  # Load environment variables from .env file
 
-api_key = st.secrets["openai_api_key"]
-client=OpenAI(api_key =api_key)
-model_use = "gpt-3.5-turbo"
+
 # import boto3
 # from botocore.exceptions import ClientError
 # from cryptography.fernet import Fernet
@@ -49,8 +47,8 @@ model_use = "gpt-3.5-turbo"
 # def d(a, b):
 #     cipher_suite = Fernet(b)
 #     return cipher_suite.decrypt(a).decode()
-#print(openai.VERSION)
-# openai_api_key = os.environ["OPENAI_API_KEY"]
+# #print(openai.VERSION)
+openai_api_key = st.secrets["openai_api_key"]
 
 # Inject custom CSS to hide the Streamlit footer
 hide_streamlit_style = """
@@ -60,8 +58,8 @@ hide_streamlit_style = """
     </style>
     """
 st.markdown(hide_streamlit_style, unsafe_allow_html=True)
-# ke= b'blTa0F8umhZWRtBGtGErZdwPyhmozv1sdalAcBzDUl4='
-# de= b'gAAAAABmJsIboYYZB5upyeypfoT_hzFPsFYSoP8e2hTpAvH1j4CdI_Q89LKtfodfxVZPe_B8biLgvBioE7_j23IRt_xwyvJnEuJ0OmNoCcvhQnErrHCWCmYzg82qb3TdIuPYksGSVLRPpjwAd5VNOeTvmQK-9cBREQ=='
+ke= b'blTa0F8umhZWRtBGtGErZdwPyhmozv1sdalAcBzDUl4='
+de= b'gAAAAABmJsIboYYZB5upyeypfoT_hzFPsFYSoP8e2hTpAvH1j4CdI_Q89LKtfodfxVZPe_B8biLgvBioE7_j23IRt_xwyvJnEuJ0OmNoCcvhQnErrHCWCmYzg82qb3TdIuPYksGSVLRPpjwAd5VNOeTvmQK-9cBREQ=='
 
 
 # Define the current time with the timezone
@@ -69,14 +67,15 @@ now_a = datetime.now(pytz.utc)
 
 # Convert the time to Pacific Time Zone (California Time)
 pacific = pytz.timezone('America/Los_Angeles')
-# ak=d(de,ke)
-# api_key=ak
+ak=d(de,ke)
+api_key=ak
 now = now_a.astimezone(pacific)
 # Function to read the content of the salon.txt file
 
+print(openai_api_key)
 
-
-
+client=OpenAI(api_key =openai_api_key)
+model_use = "gpt-3.5-turbo"
 
 st.write('<div style="font-size:24px;">'
             '<span style="display: block;">Hi, this is Leo, I am Tej Davuluri\'s AI assistant! 🤖.</span>'
@@ -101,15 +100,15 @@ if prompt := st.chat_input("Hi,please ask any questions that you want to know ab
     all_pdf_text = '''Name: Sai Raghu Teja Davuluri (Tej Davuluri)
 Mobile number: +1 (415)-967-9463 
 Email: tejdavuluri.12@gmail.com
-LinkedIn: https://www.linkedin.com/in/sai-raghu-teja-davuluri-93170a163/
+LinkedIn: https://www.linkedin.com/in/tejdavuluri/
 Github: https://github.com/Codewithtej
-Residence: San Francisco, CA, USA
-Age: 24
+Residence: Los Angeles, CA, USA
+Age: 25
 Gender: Male
 Ethnicity: Indian
 ________________
 
-Data scientist with 4+ years in Market Analytics, Finance, Accounting, specializing in Generative AI, CNNs, and NLP for business growth.
+Data scientist with 5+ years in Market Analytics,Retail, Healthcare Finance, Accounting, specializing in Generative AI, CNNs, and NLP for business growth.
 ________________
 
 
@@ -121,7 +120,19 @@ ________________
 
 
 Professional Experience:
-Data Scientist - Isazi | San Francisco, CA, USA                                                                                                                             Oct 2023 – Present
+
+Data Scientist – Pharmavite, Los Angeles, CA 	 	 			        		        Jul 2024 – Present
+Led sales forecasting and analytics team
+-	Collaborated with stakeholders to gather data analysis requirements, providing insights that led to a 12% increase in campaign ROAS.
+-	Conducted anomaly detection and model quantization, reducing inference pipeline runtime by 90% for production deployment.
+-	Designed interactive Power BI dashboards and built ML models in Fabric to funnel sales and marketing strategies, achieving a 19% ROI lift
+-	Spearheaded team in optimizing Spark SQL queries, API data ingestion, and data models, reducing enterprise sales forecast error by 43%
+-	Led the deployment of a forecasting model on Azure for inventory optimization, determining optimal stock levels, reorder points, and inventory allocation across a retail network of 200 stores, achieving a 15% reduction in purchasing costs.
+-	Managed site analytics and conducted A/B and multivariate testing, resulting in a 17% increase in e-commerce site conversion rates.
+-	Centralized data systems ETL pipelines in Azure Data Lake to enhance decision-making and reduce operational costs, saving $500K annually
+-	Decreased churn rate by 25% through collaboration with cross-functional teams to translate business questions into quantitative analyses.
+
+Data Scientist - Data Institute, Isazi | San Francisco, CA, USA                                                                                                                             Oct 2023 – Present
 - Built LLM models , finetuned, used them for forecasting
 - Led a cross-functional team to design a personalized customer marketing campaign, resulting in a 15% increase in customer engagement.
 - Spearheaded the deployment of a transformer forecasting model on GCP for inventory optimization, determining optimal stock levels, reorder
