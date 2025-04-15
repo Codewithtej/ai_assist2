@@ -72,7 +72,7 @@ now_a = datetime.now(pytz.utc)
 # now = now_a.astimezone(pacific)
 # Function to read the content of the salon.txt file
 
-print(openai_api_key)
+#print(openai_api_key)
 
 client=OpenAI(api_key =openai_api_key)
 model_use = "gpt-3.5-turbo"
